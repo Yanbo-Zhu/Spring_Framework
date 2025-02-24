@@ -1,6 +1,5 @@
 
-MyBatis是一款优秀的数据持久层ORM框架，被广泛地应用于应用系统。 
-MyBatis能够非常灵活地实现动态SQL,可以使用XML或注解来配置和映射原 生信息，能够轻松地将Java的POJO(Plain Ordinary Java Object,普通的 Java对象)与数据库中的表和字段进行映射关联。
+
 MyBatis--Plus是一个MyBatis的增强工具，在MyBatis的基础上做了增强， 简化了开发。
 
 需要注意mybatis-plus 3.5.3 才支持 spring boot 3
@@ -53,31 +52,6 @@ mybatis-plus.configuration.log-impl=org.apache.ibatis.logging.stdout.StdoutImpl
 public class MybatisplusDemoApplication
 public static void main(string[]args){
 SpringApplication.run (MybatisplusDemoApplication.class,args);
-```
-
-
-# 2 CRUD 注解
-
-![](images/Pasted%20image%2020250222195752.png)
-
-```java
-@Mapper
-public interface UserMapper{
-    @Insert("insert into user values (#id},#fusername},#password},#birthday})")
-    int add(Useruser);
-
-    @Update("update user set username=#{username},password=#{password},birthday=#{birthday}where id=#{id}")
-    int update(User user);
-
-    @Delete("delete * from user where id=#fid]")
-    int delete(int id);
-
-    @select("select * from user where id=#{id}")
-    User findById(int id);
-    
-    @Select("select * from user")
-    List<User>getAll();
-}    
 ```
 
 
