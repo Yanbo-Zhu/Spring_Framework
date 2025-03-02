@@ -5,13 +5,13 @@
 # 1 @Table and @Entity 注解
 
 
-|属性名|作用|
-|---|---|
-|`name`|指定表名（默认使用类名作为表名）|
-|`schema`|指定数据库 Schema|
-|`catalog`|指定数据库 Catalog|
-|`uniqueConstraints`|指定表级唯一约束|
-|`indexes`|指定索引|
+| 属性名                 | 作用               |
+| ------------------- | ---------------- |
+| `name`              | 指定表名（默认使用类名作为表名） |
+| `schema`            | 指定数据库 Schema     |
+| `catalog`           | 指定数据库 Catalog    |
+| `uniqueConstraints` | 指定表级唯一约束         |
+| `indexes`           | 指定索引             |
 
 
 ```java

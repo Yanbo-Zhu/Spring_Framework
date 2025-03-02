@@ -211,7 +211,7 @@ https://juejin.cn/post/6844903554776317960?from=search-suggest
 
 创建要存储的User实体，包含属性：id、username、age
 
-```
+```java
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 
@@ -224,7 +224,7 @@ data class User(@Id var id: Long? = -1, var username: String = "", val age: Int?
 
 实现User的数据访问对象：UserRepository
 
-```
+```java
 import name.quanke.kotlin.chaper11_6_4.entity.User
 import org.springframework.data.mongodb.repository.MongoRepository
 import org.springframework.stereotype.Repository
@@ -249,7 +249,7 @@ interface UserRepository : MongoRepository<User, Long> {
 
 在`application.yml`文件中增加
 
-```
+```java
 spring:
   data:
     mongodb:
@@ -262,7 +262,7 @@ spring:
 
 单元测试
 
-```
+```java
 
 import name.quanke.kotlin.chaper11_6_4.entity.User
 import name.quanke.kotlin.chaper11_6_4.repository.UserRepository
@@ -630,7 +630,7 @@ mongo-plus:
 
 
 然后！你要有一个实体类！
-```
+```java
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -654,14 +654,16 @@ public class User {
 
 
 之后！你要有你的Service！并且将Service继承Iservice，实现类则继承ServiceImpl
-```
+```java
 public interface UserService extends IService<User> {
+
 }
 ```
 
-```
+```java
 @Service
 public class UserServiceImpl extends ServiceImpl<User> implements UserService {
+
 }
 ```
 
@@ -671,7 +673,7 @@ MongoPlusMapMapper，就是为了Mongo集合结构比较复杂时使用的，会
 
 首先编写一个测试类，进行save测试！！！ ↓↓↓↓↓↓↓
 
-```
+```java
 @SpringBootTest
 public class BlogTest {
 
@@ -707,7 +709,7 @@ https://github.com/aalansehaiyang/technology-talk/blob/master/docs/md/spring/spr
 定义实体对象
 @Id 主键 不可重复，自带索引，可以在定义的列名上标注，需要自己生成并维护不重复的约束。如果自己不设置@Id主键，mongo会自动生成一个唯一主键，并且插入时效率远高于自己设置主键。在实际业务中不建议自己设置主键，应交给mongo自己生成，自己可以设置一个业务id，如int型字段，用自己设置的业务id来维护相关联的表。
 @Field 代表一个字段，可以不加，不加的话默认以参数名为列名。
-```
+```java
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -749,7 +751,7 @@ public interface UserRepository extends MongoRepository<User, String> {
 https://blog.csdn.net/weixin_36755535/article/details/134530333
 
 实体类
-```
+```java
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
  
@@ -766,7 +768,7 @@ public class User {
 ```
 
 
-```
+```java
 import org.springframework.data.mongodb.repository.MongoRepository;
  
 public interface UserRepository extends MongoRepository<User, String> {
@@ -774,7 +776,7 @@ public interface UserRepository extends MongoRepository<User, String> {
 }
 ```
 
-```
+```java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
  
