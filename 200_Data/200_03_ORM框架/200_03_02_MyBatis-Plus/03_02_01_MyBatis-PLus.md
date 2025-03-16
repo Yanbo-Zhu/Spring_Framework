@@ -55,5 +55,19 @@ SpringApplication.run (MybatisplusDemoApplication.class,args);
 ```
 
 
+# 2 条件查询 QueryWrapper
+
+```sql
+@GetMapping("/getUserWithConditionUsername/{username}")
+public List<User> getUserWithConditionUsername( @PathVariable String username) {
+    QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+    queryWrapper.eq("username", username);
+    List<User> List = userService.getUserWithConditionUsername(queryWrapper);
+    return List;
+}
+```
 
 
+# 3 分页查询
+
+![](images/Pasted%20image%2020250311233446.png)

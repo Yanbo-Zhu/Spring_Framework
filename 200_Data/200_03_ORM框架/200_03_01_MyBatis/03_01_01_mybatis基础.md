@@ -244,7 +244,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 # 6 直接写在mapper文件的的class 中: CRUD 注解
 
-![](../03_02_MyBatis-Plus/images/Pasted%20image%2020250222195752.png)
+![](../200_03_02_MyBatis-Plus/images/Pasted%20image%2020250222195752.png)
 
 ```java
 @Mapper
